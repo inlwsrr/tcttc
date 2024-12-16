@@ -1,0 +1,505 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TechnoDID</title>
+    <link rel="stylesheet" href="style.css">
+
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+
+
+    <style>
+        /* Запрещаем выделение текста */
+        .no-select {
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
+            user-select: none;
+        }
+    </style>
+</head>
+
+<body class="no-select">
+<!-- Parallax Banner Section -->
+<div class="banner parallax_1">
+    <!-- Navbar Section -->
+    <div class="navbar">
+        <!-- Якорь в начале страницы -->
+        <div id="top"></div>
+
+        <!-- Логотип с ссылкой на якорь -->
+        <a href="#top">
+            <img src="images/didlogo.jpg" class="logo" alt="TechnoClub Logo">
+        </a>
+        <script>
+            document.querySelector('.logo').addEventListener('click', function(event) {
+                event.preventDefault(); // Отменяет стандартное поведение ссылки
+                window.scrollTo({ top: 0, behavior: 'smooth' }); // Плавный скролл вверх
+            });
+        </script>
+
+
+        <ul>
+            <li><a href="#clubSection" class="no-select">o nas</a></li>
+            <li><a href="#events" class="no-select">wydarzenia</a></li>
+            <li><a href="#merch" class="no-select">merch</a></li>
+        </ul>
+    </div>
+
+    <!-- Main Content Section -->
+    <div class="content">
+        <h1 class="no-select">Welcome to TechnoDID</h1>
+        <p class="no-select">Where the light fades into darkness, the sound emerges and fills the void, guiding your soul through the shadows.</p>
+        <div class="no-select">
+            <button type="button" class="no-select" id="openRgModal"><span></span>sign in</button>
+            <button type="button" class="no-select" id="openLoginModal"><span></span>log in</button>
+        </div>
+    </div>
+</div>
+
+
+<!-- Registration Modal -->
+<div class="rg-modal" id="registrationModal">
+    <div class="rg-modal-content">
+        <span class="rg-close" id="closeRgModal">&times;</span>
+        <h2>Регистрация</h2>
+        <form id="registrationForm">
+            <label for="username">Имя пользователя:</label>
+            <input type="text" id="username" name="username" class="rg-input" required>
+
+            <label for="email">Электронная почта:</label>
+            <input type="email" id="email" name="email" class="rg-input" required>
+
+            <label for="password">Пароль:</label>
+            <input type="password" id="password" name="password" class="rg-input" required>
+
+            <button type="submit" class="rg-button">Зарегистрироваться</button>
+        </form>
+    </div>
+</div>
+
+<!-- Login Modal -->
+<div class="rg-modal" id="loginModal">
+    <div class="rg-modal-content">
+        <span class="rg-close" id="closeLoginModal">&times;</span>
+        <h2>Войти</h2>
+        <form id="loginForm">
+            <label for="loginEmail">Электронная почта:</label>
+            <input type="email" id="loginEmail" name="loginEmail" class="rg-input" required>
+
+            <label for="loginPassword">Пароль:</label>
+            <input type="password" id="loginPassword" name="loginPassword" class="rg-input" required>
+
+            <button type="submit" class="rg-button">Войти</button>
+        </form>
+    </div>
+    <script src="javascript.js"></script>
+
+</div>
+
+
+
+
+
+
+
+
+
+<!-- Events Section with Performers -->
+<section id="events" class="techno-grid">
+    <h2 class="program-title">program</h2>
+
+    <!-- Performer 1 -->
+    <div class="performer">
+        <img src="images/dj1.jpg" alt="Thom Yorke" class="performer-photo">
+        <h2 class="performer-name">Thom Yorke</h2>
+        <p class="set-title">Friday, 25.10</p>
+        <button class="open-modal-btn" data-modal="modal1">About Thom Yorke</button>
+        <div class="custom-audio-player">
+            <div class="controls">
+                <button class="play-pause-btn" id="playPause1">►</button>
+
+
+                <label for="seekBar1" class="visually-hidden">Seek Bar:</label>
+                <input type="range" id="seekBar1" class="seek-bar" value="0">
+
+                <label for="volume1" class="visually-hidden">Volume:</label>
+                <input type="range" id="volume1" class="volume-bar" value="100" min="0" max="100">
+
+
+                <div class="time-info">
+                    <span id="currentTime1">0:00</span> / <span id="duration1">0:00</span>
+                </div>
+            </div>
+            <audio id="audio1">
+                <source src="music/djset1.mp3" type="audio/mpeg">
+                Your browser does not support the audio element.
+            </audio>
+        </div>
+    </div>
+
+    <!-- Modal for Thom Yorke -->
+    <div id="modal1" class="modal">
+        <div class="modal-content">
+            <span class="close-btn" data-modal="modal1">&times;</span>
+            <h2>Thom Yorke</h2>
+            <p>Thom Yorke, the frontman of Radiohead, is also a solo artist and DJ known for blending electronic, ambient, and experimental music. His DJ sets often mix IDM, glitch, and eclectic soundscapes. As a solo artist, Yorke has released albums like *The Eraser* and *Anima*, pushing the boundaries between rock and electronic music, heavily influenced by artists like Aphex Twin. He's a key figure in merging these genres, using his DJ work to explore new sonic textures.</p>
+        </div>
+    </div>
+
+
+
+    <!-- Performer 2 -->
+    <div class="performer">
+        <img src="images/dj2.jpg" alt="DJ Beta" class="performer-photo">
+        <h2 class="performer-name">gienstal</h2>
+        <p class="set-title">Saturday, 26.10</p>
+        <button class="open-modal-btn" data-modal="modal2">About gienstal</button>
+        <div class="custom-audio-player">
+            <div class="controls">
+                <button class="play-pause-btn" id="playPause2">►</button>
+                <label for="seekBar2" class="visually-hidden">Seek Bar:</label>
+                <input type="range" id="seekBar2" class="seek-bar" value="0">
+
+                <label for="volume2" class="visually-hidden">Volume:</label>
+                <input type="range" id="volume2" class="volume-bar" value="100" min="0" max="100">
+
+
+                <div class="time-info">
+                    <span id="currentTime2">0:00</span> / <span id="duration2">0:00</span>
+                </div>
+            </div>
+            <audio id="audio2">
+                <source src="music/djset2.mp3" type="audio/mpeg">
+                Your browser does not support the audio element.
+            </audio>
+        </div>
+    </div>
+
+    <!-- Modal for DJ Beta -->
+    <div id="modal2" class="modal">
+        <div class="modal-content">
+            <span class="close-btn" data-modal="modal2">&times;</span>
+            <h2>gienstal</h2>
+            <p>gienstal – began in Berlin’s underground, inspired by the mysterious allure of the moon. Her fusion of deep house, spacey techno, and ambient beats quickly earned her a cult following. Luna’s sets transport listeners to otherworldly realms, headlining festivals worldwide, from Ibiza to Tokyo. Known for her cosmic sound and deep basslines, she remains rooted in her passion for creating music that captures the magic of dancing beneath the stars.</p>
+        </div>
+    </div>
+
+
+    <!-- Performer 3 -->
+    <div class="performer">
+        <img src="images/dj3.jpg" alt="DJ Gamma" class="performer-photo">
+        <h2 class="performer-name">DJ Gamma</h2>
+        <p class="set-title">Techno Set #3</p>
+        <button class="open-modal-btn" data-modal="modal3">About DJ Gamma</button>
+        <div class="custom-audio-player">
+            <div class="controls">
+                <button class="play-pause-btn" id="playPause3">►</button>
+                <label for="seekBar3" class="visually-hidden">Seek Bar:</label>
+                <input type="range" id="seekBar3" class="seek-bar" value="0">
+
+                <label for="volume3" class="visually-hidden">Volume:</label>
+                <input type="range" id="volume3" class="volume-bar" value="100" min="0" max="100">
+
+                <div class="time-info">
+                    <span id="currentTime3">0:00</span> / <span id="duration3">0:00</span>
+                </div>
+            </div>
+            <audio id="audio3">
+                <source src="music/djset3.mp3" type="audio/mpeg">
+                Your browser does not support the audio element.
+            </audio>
+        </div>
+    </div>
+
+    <!-- Modal for DJ Gamma -->
+    <div id="modal3" class="modal">
+        <div class="modal-content">
+            <span class="close-btn" data-modal="modal3">&times;</span>
+            <h2>DJ Gamma</h2>
+            <p>DJ Gamma – мастер психоделических трансформаций звука. Он известен своими экспериментальными подходами, привнося элементы хаотических ритмов и глубоко резонирующих басов. Вдохновение черпает из природных циклов и космических явлений, что делает его сеты особенно завораживающими.</p>
+        </div>
+    </div>
+
+
+    <!-- Performer 4 -->
+    <div class="performer">
+        <img src="images/dj4.jpg" alt="DJ Delta" class="performer-photo">
+        <h2 class="performer-name">DJ Delta</h2>
+        <p class="set-title">Techno Set #4</p>
+        <button class="open-modal-btn" data-modal="modal4">About DJ Delta</button>
+        <div class="custom-audio-player">
+            <div class="controls">
+                <button class="play-pause-btn" id="playPause4">►</button>
+                <label for="seekBar4" class="visually-hidden">Seek Bar:</label>
+                <input type="range" id="seekBar4" class="seek-bar" value="0">
+
+                <label for="volume4" class="visually-hidden">Volume:</label>
+                <input type="range" id="volume4" class="volume-bar" value="100" min="0" max="100">
+
+
+                <div class="time-info">
+                    <span id="currentTime4">0:00</span> / <span id="duration4">0:00</span>
+                </div>
+            </div>
+            <audio id="audio4">
+                <source src="music/djset4.mp3" type="audio/mpeg">
+                Your browser does not support the audio element.
+            </audio>
+        </div>
+    </div>
+
+    <!-- Modal for DJ Delta -->
+    <div id="modal4" class="modal">
+        <div class="modal-content">
+            <span class="close-btn" data-modal="modal4">&times;</span>
+            <h2>DJ Delta</h2>
+            <p>DJ Delta – изысканный микс гипнотических ритмов и атмосферных мелодий.</p>
+        </div>
+    </div>
+</section>
+
+
+
+
+
+
+<!-- Второй параллакс -->
+<div class="banner parallax_2">
+    <div class="content2">
+        <h1>Sync with the Rave</h1>
+        <p>The darkness awakens, and we are its children.</p>
+    </div>
+</div>
+
+
+
+
+<!-- Merch Section -->
+<section id="merch" class="merch">
+    <h2>Merchandise</h2>
+
+    <!-- First Row -->
+    <div class="merch-container">
+        <!-- Existing Product 1 -->
+        <div class="product" data-front="images/product1_front.webp" data-back="images/product1_back.webp">
+            <img src="images/product1_front.webp" alt="Product 1" class="product-img">
+            <h3>sweater</h3>
+            <p class="price">price: $110</p>
+        </div>
+
+        <!-- Existing Product 2 -->
+        <div class="product" data-front="images/product2_front.webp" data-back="images/product2_back.webp">
+            <img src="images/product2_front.webp" alt="Product 2" class="product-img">
+            <h3>t-did</h3>
+            <p class="price">price: $60</p>
+        </div>
+
+        <!-- Existing Product 3 -->
+        <div class="product" data-front="images/product3_front.webp" data-back="images/product3_back.webp">
+            <img src="images/product3_front.webp" alt="Product 3" class="product-img">
+            <h3>dj cap</h3>
+            <p class="price">price: $50</p>
+        </div>
+    </div>
+
+    <!-- Second Row Title -->
+    <h2>Exclusive</h2>
+
+    <!-- Second Row -->
+    <div class="merch-container">
+        <!-- Existing Product 4 -->
+        <div class="product" data-front="images/product4_front.webp" data-back="images/product4_back.webp">
+            <img src="images/product4_front.webp" alt="Product 4" class="product-img">
+            <h3>swtr</h3>
+            <p class="price">price: $170</p>
+        </div>
+
+        <!-- Existing Product 5 -->
+        <div class="product" data-front="images/product5_front.webp" data-back="images/product5_back.webp">
+            <img src="images/product5_front.webp" alt="Product 5" class="product-img">
+            <h3>jeans tee</h3>
+            <p class="price">price: $120</p>
+        </div>
+
+        <!-- Existing Product 6 -->
+        <div class="product" data-front="images/product6_front.webp" data-back="images/product6_back.webp">
+            <img src="images/product6_front.webp" alt="Product 6" class="product-img">
+            <h3>rock cap</h3>
+            <p class="price">price: $80</p>
+        </div>
+
+        <!-- Modal Window for Product Images -->
+        <div id="productModal" class="modal">
+            <span class="close">&times;</span>
+            <div class="modal-content-wrapper">
+                <img class="modal-content" id="modalImg" src="" alt="закрыть"> <!-- Вид спереди -->
+                <img class="modal-content" id="modalImgBack" style="display:none;" src="" alt="закрыть"> <!-- Вид сзади, по умолчанию скрыт -->
+            </div>
+            <span class="prev">&#10094;</span> <!-- Левая стрелка -->
+            <span class="next">&#10095;</span> <!-- Правая стрелка -->
+        </div>
+    </div>
+
+    <!-- Сообщение об эксклюзивности -->
+    <div id="merchNote" class="merch-note">
+        <p><strong>Note:</strong> Our exclusive merchandise is <span>delivery available</span> at wedsite of mine. In optional you can visit us to grab yours!</p>
+    </div>
+</section>
+
+
+
+<!-- Cart Section -->
+<div id="cart">
+    <h2>Cart</h2>
+    <div id="cart-items"></div>
+    <p>Total: $<span id="cart-total">0</span></p>
+    <button id="checkout-button" disabled>Buy Now</button>
+</div>
+
+<script src="https://js.stripe.com/v3/"></script>
+<script>
+    // Инициализация Stripe
+    const stripe = Stripe('pk_test_51QWk6BA8Xe2YD1W502ut0tr7FSWQMUb11uyJy92KqmGpdKH0vH2y4ArXlExcbPx9mre6Al9dipLmSVzfNCs6f0lS003892xP9b'); // Вставьте ваш Publishable Key
+
+    // Корзина
+    let cart = [];
+    const cartItems = document.getElementById('cart-items');
+    const cartTotal = document.getElementById('cart-total');
+    const checkoutButton = document.getElementById('checkout-button');
+
+    // Обновление корзины
+    function updateCart() {
+        cartItems.innerHTML = '';
+        let total = 0;
+
+        cart.forEach((item, index) => {
+            const itemElement = document.createElement('div');
+            itemElement.classList.add('cart-item');
+            itemElement.innerHTML = `
+                <span>${item.name} - $${item.price}</span>
+                <button onclick="removeFromCart(${index})">Remove</button>
+            `;
+            cartItems.appendChild(itemElement);
+            total += item.price;
+        });
+
+        cartTotal.textContent = total.toFixed(2);
+        checkoutButton.disabled = cart.length === 0;
+    }
+
+    // Добавить товар в корзину
+    function addToCart(name, price) {
+        cart.push({ name, price });
+        updateCart();
+    }
+
+    // Удалить товар из корзины
+    function removeFromCart(index) {
+        cart.splice(index, 1);
+        updateCart();
+    }
+
+    // Кнопка "Buy Now"
+    checkoutButton.addEventListener('click', async () => {
+        // Подготовка данных для Stripe
+        const items = cart.map(item => ({
+            name: item.name,
+            amount: Math.round(item.price * 100), // Цена в центах
+            currency: 'usd',
+            quantity: 1,
+        }));
+
+        try {
+            // Отправка запроса на сервер для создания сессии
+            const response = await fetch('http://localhost:4242/create-checkout-session', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ items }),
+            });
+
+            const session = await response.json();
+
+            // Перенаправление на Stripe Checkout
+            const result = await stripe.redirectToCheckout({ sessionId: session.id });
+            if (result.error) {
+                alert(result.error.message);
+            }
+        } catch (error) {
+            console.error('Ошибка:', error);
+            alert('Не удалось провести оплату. Попробуйте позже.');
+        }
+    });
+
+    // Тестовые кнопки для добавления товаров
+    document.body.insertAdjacentHTML(
+        'beforeend',
+        `
+        <button onclick="addToCart('sweater', 110.00)">Add sweater ($110.00)</button>
+        <button onclick="addToCart('t-did', 60.00)">Add t-did ($60.00)</button>
+        <button onclick="addToCart('dj cap', 50.00)">Add dj cap ($50.00)</button>
+        <button onclick="addToCart('swtr', 170.00)">Add swtr ($170.00)</button>
+        <button onclick="addToCart('jeans tee', 120.00)">Add jeans tee ($120.00)</button>
+        <button onclick="addToCart('rock cap', 80.00)">Add rock cap ($80.00)</button>
+        `
+    );
+</script>
+
+
+
+
+
+
+
+
+
+
+<section id="clubSection">
+    <!-- Левая часть: Уменьшенная карта -->
+    <div id="mapContainer">
+        <iframe
+                id="mapFrame"
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2449.3937498252357!2d21.03143511579739!3d52.23082847975952!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x471ecd79348220b5%3A0xdf01d0c00fb1e18e!2sSzara%2010A%2C%2000-420%20Warszawa!5e0!3m2!1spl!2spl!4v1697803956783!5m2!1spl!2spl"
+                width="100%"
+                height="100%"
+                style="border:0;"
+                allowfullscreen=""
+                loading="lazy"
+                referrerpolicy="no-referrer-when-downgrade">
+
+        </iframe>
+    </div>
+
+
+
+
+    <!-- Правая часть: Контактная информация -->
+    <div id="contactInfo">
+        <h2>Rave Techno Club</h2>
+        <p><strong>Adres:</strong> Szara 10A, 00-420 Warszawa</p>
+        <p><strong>Telefon:</strong> +48 123 456 789</p>
+        <p><strong>Email:</strong> kontakt@raveclub.pl</p>
+        <p><strong>Godziny otwarcia:</strong> Piątek - Sobota: 22:00 - 06:00</p>
+    </div>
+</section>
+
+
+
+<!-- Подвал с информацией об авторе -->
+<footer id="siteFooter">
+    <p>Projekt realizowany przez <strong>Dmytro Maksymov</strong>, index 62944.</p>
+</footer>
+
+
+
+
+
+
+
+</body>
+
+</html>

@@ -1,0 +1,978 @@
+/* General Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+/* Body Styling */
+body {
+    background-color: #111; /* Deep black background */
+    color: #ddd; /* Light text color for readability */
+    font-family: 'Arial', sans-serif;
+}
+
+
+
+
+form {
+    margin-top: 10px; /* Adjust this value to increase or decrease the space */
+}
+
+label {
+    display: block;
+    margin-bottom: 4px; /* Adds space between the label and the input field */
+}
+
+/* Styling for input fields with the class rg-input */
+.rg-input {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 10px;
+    background-color: #444;
+    border: 1px solid #666;
+    color: #fff;
+    border-radius: 4px;
+}
+
+/* Centering the button by making it an inline-block and removing width */
+.rg-button {
+    display: inline-block;
+    padding: 8px 20px;  /* Adjust padding for better look */
+    background-color: #555;
+    border: 1px solid #777;
+    color: white;
+    cursor: pointer;
+    border-radius: 4px;
+}
+
+/* Button hover effect */
+.rg-button:hover {
+    background-color: #666;
+}
+
+/* Modal styles are the same for both registration and login modals */
+.rg-modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.8);
+}
+
+/* Ensure the modal content is centered */
+.rg-modal-content {
+    background-color: #2c2c2c;
+    margin: 15% auto;
+    padding: 20px;
+    border: 1px solid #444;
+    width: 300px;
+    border-radius: 8px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
+    text-align: center; /* Add this to center the content inside */
+}
+
+/* Close button */
+.rg-close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.rg-close:hover,
+.rg-close:focus {
+    color: white;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+
+
+
+
+/* Parallax Banner */
+.parallax_1 {
+    background: url('images/banner-background.jpg') no-repeat center center/cover;
+    background-attachment: fixed;
+    height: 100vh;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #fdfdfd;
+    box-shadow: inset 0 0 200px rgba(0, 0, 0, 0.8); /* Dark shadow for mystery */
+}
+
+.parallax_1 h1 {
+    font-size: 60px;
+    letter-spacing: 3px;
+    text-shadow: 0 0 15px rgba(255, 255, 255, 0.8); /* Glowing text effect */
+    margin-bottom: 20px;
+}
+
+.parallax_1 p {
+    font-size: 20px;
+    margin-top: 20px;
+    color: rgba(239, 224, 224, 0.84);
+    text-shadow: 0 0 8px rgba(200, 4, 4, 0.22);
+}
+
+
+/* Navbar Styling */
+.navbar {
+    width: 100%; /* Navbar spans the full width of the page */
+    position: fixed; /* Fix the navbar at the top */
+    top: 0; /* Align it to the top of the page */
+    left: 0; /* Align it to the left side of the page */
+    padding: 15px 0; /* Add some padding to make it look better */
+    display: flex; /* Flexbox layout for positioning items */
+    justify-content: space-between; /* Space out items evenly */
+    align-items: center; /* Vertically center the items */
+    z-index: 100; /* Ensure it's above other elements */
+}
+
+.logo {
+    position: absolute;
+    top: 0;
+    left: 0;
+    margin: 15px; /* Отступ от левого верхнего угла */
+    width: 100px;
+    cursor: pointer;
+}
+
+
+.navbar ul li {
+    list-style: none;
+    display: inline-block;
+    margin: 0 20px;
+    position: relative;
+}
+
+.navbar ul li a {
+    text-decoration: none;
+    color: #ffffff;
+    text-transform: lowercase;
+}
+
+.navbar ul li::after {
+    content: '';
+    height: 3px;
+    width: 0;
+    background: #af3f3f;
+    position: absolute;
+    left: 0;
+    bottom: -10px;
+    transition: 0.5s;
+}
+
+.navbar ul li:hover::after {
+    width: 100%;
+}
+
+
+.content {
+    width: 100%;
+    position: absolute;
+    top: 45%;
+    transform: translateY(-50%);
+    text-align: center;
+    color: #ffffff;
+}
+
+.content h1 {
+    font-size: 70px;
+    margin-top: 0;
+}
+
+.content p {
+    margin: 20px auto;
+    font-weight: 100;
+    line-height: 25px;
+}
+
+
+/* Button Styling */
+button {
+    width: 200px;
+    padding: 15px 0;
+    text-align: center;
+    margin: 20px 10px;
+    border-radius: 25px;
+    font-weight: bold;
+    border: 2px solid #df1945;
+    background: transparent;
+    color: #f34c4c;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+    transition: 0.7s;
+
+}
+
+button span {
+    position: absolute;
+    background-color: rgba(166, 0, 0, 0.5);
+    width: 0;
+    height: 100%;
+    left: 0;
+    bottom: 0;
+    z-index: -1;
+    transition: width 0.5s ease;
+}
+
+button:hover span {
+    width: 100%;
+}
+
+button:hover {
+    border: 2px solid #df1945;
+    color: #000;
+}
+
+
+
+/* НАЧАЛО */
+
+/* Стиль кнопки About */
+button.open-modal-btn {
+    border-radius: 25px;
+    font-weight: bold;
+    border: 2px solid #df1945;
+    background: transparent;
+    color: #f34c4c;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+    transition: color 0.7s;
+}
+
+/* Псевдоэлемент для создания эффекта заливки */
+button.open-modal-btn::before {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 100%;
+    background-color: rgb(151, 2, 2);
+    left: 0;
+    bottom: 0;
+    transition: width 0.5s ease;
+    z-index: -1;
+}
+
+/* При наведении ширина псевдоэлемента увеличивается */
+button.open-modal-btn:hover::before {
+    width: 100%;
+}
+
+button.open-modal-btn:hover {
+    color: #000;  /* Изменение цвета текста при наведении */
+}
+
+
+
+/* Стиль для модальных окон (About DJ) */
+.modal {
+    position: fixed; /* Фиксируем модальное окно по всему экрану */
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(0, 0, 0, 0.8); /* Прозрачный черный фон */
+    z-index: 1000; /* Задаем высокий z-index */
+}
+
+/* Контент модального окна */
+.modal-content {
+    position: relative; /* Позиционируем относительно модального окна */
+    padding: 20px;
+    background-color: #151414; /* Белый фон внутри модального окна */
+    border-radius: 8px;
+    max-width: 500px;
+    width: 100%;
+}
+
+/* Заголовок модального окна */
+.modal-content h2 {
+    font-size: 1.8rem;
+    color: #f5f5f5; /* Белый текст */
+    margin-bottom: 1rem;
+    font-family: 'Old English Text MT', serif; /* Готический шрифт */
+}
+
+/* Текст модального окна */
+.modal-content p {
+    color: #cccccc; /* Светло-серый текст */
+    font-size: 1rem;
+    line-height: 1.6;
+    font-family: 'Georgia', serif; /* Гармония со стилем сетов */
+    margin-bottom: 1.5rem;
+}
+
+
+/* Кнопка закрытия модального окна */
+.close-btn {
+    color: #f5f5f5;
+    font-size: 1.5rem;
+    font-weight: bold;
+    position: absolute; /* Относительно модального окна */
+    right: 1rem;
+    top: 1rem;
+    cursor: pointer;
+    transition: color 0.3s ease;
+    z-index: 1001; /* Убедитесь, что она находится над содержимым */
+}
+
+.close-btn:hover {
+    color: #cccccc; /* Изменение цвета при наведении */
+}
+
+
+/* Анимация увеличения при появлении модального окна */
+.modal-content {
+    animation: modalAppear 0.3s ease-in-out;
+}
+
+
+@keyframes modalAppear {
+    from {
+        transform: scale(0.9);
+        opacity: 0;
+    }
+    to {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+
+/* Основная сетка */
+.techno-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+    padding: 4rem 2rem 4rem 2rem; /* Отступ сверху для заголовка */
+    background-color: #0d0d0d; /* Глубокий черный фон */
+    position: relative; /* Для позиционирования заголовка */
+}
+
+/* Стиль для заголовка секции Program */
+.program-title {
+    position: absolute; /* Абсолютное позиционирование заголовка */
+    top: 0.5rem; /* Поднимаем заголовок еще выше */
+    left: 1rem; /* Расположение заголовка слева */
+    font-size: 1.6rem;
+    color: #f5f5f5;
+    z-index: 1; /* Убедитесь, что заголовок выше остального контента */
+    padding: 0.5rem 1rem;
+    border-radius: 5px;
+}
+
+/* Остальные стили исполнителей, плееров и модальных окон остаются такими же */
+
+
+
+
+
+
+
+/* Стиль исполнителя */
+.performer {
+    text-align: center;
+    padding: 1.5rem;
+    background: #1a1a1a;
+    border: 1px solid #444; /* Тонкий бордюр для рамки */
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.6); /* Мягкая тень */
+    transition: transform 0.3s ease;
+}
+
+.performer:hover {
+    transform: scale(1.02); /* Легкое увеличение при наведении */
+}
+
+/* Фото исполнителя */
+.performer-photo {
+    border-radius: 50%;
+    border: 2px solid #444;
+    width: 150px;
+    height: 150px;
+    object-fit: cover;
+}
+
+/* Имя исполнителя */
+.performer-name {
+    font-size: 1.5rem;
+    color: #f5f5f5; /* Белый текст */
+    letter-spacing: 0.1rem;
+    margin-top: 1rem;
+    font-family: 'Old English Text MT', serif; /* Готический шрифт */
+}
+
+
+/* Название сета */
+.set-title {
+    font-size: 0.7rem; /* Увеличенный размер текста для большей выразительности */
+    color: #ffffff; /* Белый текст для контраста на темном фоне */
+    margin-bottom: 1rem;
+    font-family: 'Orbitron', sans-serif; /* Используем новый шрифт */
+    text-transform: uppercase; /* Приведение текста к верхнему регистру для стильного эффекта */
+    letter-spacing: 2px; /* Увеличение расстояния между буквами */
+    text-shadow: 0 0 5px rgba(255, 0, 0, 0.8), 0 0 10px rgba(0, 0, 0, 0.7); /* Эффект подсветки в красном */
+}
+
+
+
+
+.visually-hidden {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    border: 0;
+}
+
+/* Стиль кнопки воспроизведения */
+.play-pause-btn {
+    background-color: transparent;
+    border: none;
+    font-size: 2rem; /* Фиксированный размер шрифта */
+    color: #f5f5f5; /* Белый цвет */
+    cursor: pointer;
+    width: 3rem;  /* Фиксированная ширина */
+    height: 3rem; /* Фиксированная высота */
+    display: inline-flex; /* Для центрирования содержимого кнопки */
+    align-items: center;
+    justify-content: center;
+    line-height: 1; /* Убираем влияние высоты строки */
+    transition: transform 0.2s ease, color 0.3s ease;
+    text-align: center;
+}
+
+.play-pause-btn:hover {
+    color: #ac2d2d; /* Легкое изменение цвета при наведении */
+}
+
+/* Убираем стандартную обводку */
+.play-pause-btn:focus {
+    outline: none;
+}
+
+/* Обертка для плеера */
+.custom-audio-player {
+    height: 130px; /* Пример фиксированной высоты */
+    align-items: center;
+    justify-content: center; /* Добавляем это для центровки */
+    gap: 10px;
+    width: 100%;
+    max-width: 500px;
+    min-width: 300px;
+    margin: 0 auto; /* Центрирование контейнера */
+
+}
+
+.hidden {
+    display: none;
+}
+
+
+
+
+/* Ползунок времени (Seek Bar) */
+.seek-bar {
+    width: 100%;
+    margin: 0.5rem 0;
+    -webkit-appearance: none;
+    background: #1a1a1a; /* Глубокий черный */
+    height: 3px; /* Очень тонкий ползунок */
+    border-radius: 2px;
+    outline: none;
+    box-shadow: 0 0 5px #000; /* Подсветка */
+    transition: background 0.3s ease;
+}
+
+.seek-bar::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: #a60000; /* Неоновый бегунок */
+    cursor: pointer;
+    border: none;
+    box-shadow: 0 0 10px #651111; /* Неоновая подсветка */
+}
+
+.seek-bar::-moz-range-thumb {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: #a60000;
+    cursor: pointer;
+    border: none;
+    box-shadow: 0 0 10px rgba(163, 26, 26, 0.98);
+}
+
+/* Цвет при наведении */
+.seek-bar:hover,
+.volume-bar:hover {
+    background: #222; /* Немного светлее при наведении */
+}
+
+.seek-bar:active,
+.volume-bar:active {
+    background: #333; /* Светлее при активации */
+}
+
+
+/* Время проигрывания */
+.time-info {
+    color: #f5f5f5; /* Светлый цвет текста */
+    font-size: 0.85rem; /* Размер текста */
+    font-family: 'Roboto Mono', monospace; /* Используем новый шрифт */
+    letter-spacing: 0.05em; /* Легкое увеличение расстояния между буквами */
+    text-transform: uppercase; /* Приведение текста к верхнему регистру для стильного эффекта */
+}
+
+
+
+/* Ползунок громкости */
+.volume-control {
+    display: flex;
+    align-items: center;
+    margin-top: 0.5rem;
+}
+
+.volume-control input[type="range"] {
+    width: 100px; /* Ширина ползунка громкости */
+    margin-left: 0.5rem;
+    -webkit-appearance: none;
+    background: #333;
+    height: 5px; /* Тонкий ползунок */
+    border-radius: 5px;
+    outline: none;
+}
+
+.volume-control input[type="range"]::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: #f5f5f5;
+    cursor: pointer;
+    border: 1px solid #444;
+}
+
+
+/* volume-bar */
+/* Стиль ползунка громкости */
+.volume-bar {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 100px; /* Ширина ползунка громкости */
+    height: 2px; /* Толщина ползунка */
+    background: #e32148; /* Новый цвет для ползунка */
+    border-radius: 5px;
+    outline: none;
+    transition: background 0.3s ease; /* Плавное изменение цвета */
+}
+
+/* Стили для бегунка (thumb) ползунка */
+.volume-bar::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: #ffffff; /* Цвет бегунка (thumb) */
+    cursor: pointer;
+    border: 2px solid #444; /* Обводка вокруг бегунка */
+    transition: background 0.3s ease; /* Плавное изменение цвета */
+}
+
+/* Для браузеров, поддерживающих стандартный input[type="range"] */
+.volume-bar::-moz-range-thumb {
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+    background: #ffffff; /* Цвет бегунка (thumb) */
+    cursor: pointer;
+    border: 2px solid #444; /* Обводка вокруг бегунка */
+    transition: background 0.3s ease;
+}
+
+/* Цвет при наведении */
+.volume-bar:hover {
+    background: #cf1a1a; /* Цвет ползунка при наведении */
+}
+
+/* Цвет активного ползунка (при изменении громкости) */
+.volume-bar:active {
+    background: #ff0000; /* Цвет ползунка при активации */
+}
+
+
+
+
+/* КОНЕЦ */
+
+
+/* Parallax_2 */
+.parallax_2 {
+    background: url('images/second-banner-background.jpg') no-repeat center center/cover;
+    background-attachment: fixed;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+    box-shadow: inset 0 0 200px rgba(0, 0, 0, 0.8);
+}
+
+.parallax_2 h1 {
+    font-size: 60px;
+    letter-spacing: 3px;
+    text-shadow: 0 0 15px rgba(255, 255, 255, 0.8); /* Эффект свечения для текста */
+    margin-bottom: 20px;
+}
+
+.parallax_2 p {
+    font-size: 20px;
+    margin-top: 20px;
+    color: rgba(239, 224, 224, 0.84);
+    text-shadow: 0 0 8px rgba(200, 4, 4, 0.22);
+}
+
+
+.content2 {
+    width: 100%;
+    position: absolute;transform: translateY(-50%);
+    text-align: center;
+    color: #ffffff;
+}
+
+.content2 h1 {
+    font-size: 70px;
+    margin-top: 0;
+}
+
+.content2 p {
+    margin: 20px auto;
+    font-weight: 100;
+    line-height: 25px;
+}
+
+
+/* Стили для товаров в секции Merch */
+
+
+
+
+
+/* Стиль для заметки в конце секции с мерчем */
+.merch-note {
+    margin-top: 40px;
+    padding: 20px;
+    background-color: #1a1a1a;
+    border-top: 2px solid #333;
+    text-align: center;
+    color: #cccccc;
+    font-family: 'Courier New', monospace;
+    font-size: 1.2em;
+    box-shadow: 0 0 15px rgba(255, 0, 102, 0.5);
+    border-radius: 8px;
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.merch-note strong {
+    color: #ff0066;
+    text-shadow: 0 0 10px rgba(255, 0, 102, 0.8);
+}
+
+.merch-note span {
+    color: #ffffff;
+    font-weight: bold;
+    text-decoration: underline;
+    text-shadow: 0 0 8px rgba(255, 255, 255, 0.7);
+}
+
+/* Эффект при наведении на сообщение */
+.merch-note:hover {
+    background-color: #111;
+    box-shadow: 0 0 20px rgba(255, 0, 102, 0.7);
+}
+
+
+
+
+
+/* Стиль для модального окна */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.9);
+    justify-content: center;
+    align-items: center;
+}
+
+.modal-content-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%; /* Задаем высоту для wrapper */
+}
+
+.modal-content {
+    max-width: 80%; /* Ограничиваем ширину изображения */
+    max-height: 80%; /* Ограничиваем высоту изображения */
+    border-radius: 10px;
+    object-fit: contain; /* Чтобы изображение не растягивалось */
+}
+
+.close {
+    position: absolute;
+    top: 15px;
+    right: 35px;
+    color: #fff;
+    font-size: 40px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.prev, .next {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 60px;
+    color: white;
+    padding: 20px;
+    cursor: pointer;
+    user-select: none;
+}
+
+.prev {
+    left: 10px;
+}
+
+.next {
+    right: 10px;
+}
+
+
+/* Кнопка закрытия модального окна */
+.close {
+    position: absolute;
+    top: 15px;
+    right: 35px;
+    color: #fff;
+    font-size: 40px;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+.close:hover,
+.close:focus {
+    color: #bbb;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+
+.merch h2 {
+    margin-top: 50px; /* Adjust the value as needed */
+    text-align: center; /* Keep it centered */
+    color: #fff; /* Keeps the white color */
+}
+
+.merch-container {
+    margin-bottom: 30px; /* Space between rows */
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    padding: 50px 0;
+}
+
+.product {
+    width: 25%;
+    text-align: center;
+    padding: 15px;
+    background-color: rgba(0, 0, 0, 0.7); /* Темный фон для товара */
+    border-radius: 7px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Анимация трансформации и тени */
+}
+
+.product img {
+    width: 80%; /* Изображение растягивается по ширине контейнера */
+    border-radius: 5px;
+}
+
+.product h3, .product .price {
+    color: #fff;
+}
+
+/* Эффект при наведении на продукт */
+.product:hover {
+    transform: scale(1.1); /* Увеличение размера на 10% при наведении */
+    box-shadow: 0 0 20px rgba(255, 255, 255, 0.8); /* Свечение белым светом */
+}
+
+
+
+
+
+
+/* Общий стиль для секции клуба */
+#clubSection {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 30px;
+    background-color: #111111;
+    border: 2px solid #333;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.7);
+    border-radius: 8px;
+    min-height: 400px;
+    position: relative;
+    overflow: hidden;
+}
+
+/* Карта */
+#mapContainer {
+    width: 35%;
+    height: 250px;
+    background-color: #000;
+    border: 1px solid #444;
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border-radius: 8px;
+}
+
+#mapContainer:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 20px rgba(255, 255, 255, 0.2);
+}
+
+.map-small {
+    width: 300px; /* Adjust this to your desired smaller size */
+    height: 200px; /* Adjust height */
+}
+
+.map-large {
+    width: 600px; /* Adjust this to your desired larger size */
+    height: 400px; /* Adjust height */
+}
+
+
+/* Контактная информация */
+#contactInfo {
+    width: 60%;
+    padding: 20px;
+    background-color: #1a1a1a;
+    border: 1px solid #555;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.1);
+    color: #cccccc;
+    font-family: 'Courier New', monospace;
+}
+
+#contactInfo h2 {
+    color: #ff0066;
+    font-size: 2.2em;
+    text-shadow: 0 0 10px rgba(255, 0, 102, 0.8);
+    margin-bottom: 20px;
+}
+
+#contactInfo p {
+    margin: 10px 0;
+    line-height: 1.6;
+    font-size: 1.2em;
+}
+
+#contactInfo p strong {
+    color: #ffffff;
+    text-shadow: 0 0 5px rgba(255, 255, 255, 0.5);
+}
+
+/* Подсветка секции */
+#clubSection:before {
+    content: '';
+    position: absolute;
+    top: -20%;
+    left: -10%;
+    width: 150%;
+    height: 150%;
+    background: radial-gradient(circle, rgba(255, 0, 102, 0.15), transparent);
+    z-index: -1;
+    transition: opacity 0.3s ease;
+    filter: blur(30px);
+}
+
+#clubSection:hover:before {
+    opacity: 0.7;
+}
+
+/* Дополнительные CSS-штуки: анимация свечения */
+@keyframes glow {
+    0% { box-shadow: 0 0 5px rgba(255, 0, 102, 0.4); }
+    100% { box-shadow: 0 0 15px rgba(255, 0, 102, 0.7); }
+}
+
+/* Секция подвала */
+#siteFooter {
+    margin-top: 50px;
+    padding: 10px;
+    text-align: center;
+    background-color: #111;
+    border-top: 1px solid #333;
+    color: #cccccc;
+    font-family: 'Courier New', monospace;
+    font-size: 1em;
+}
+
+#siteFooter p {
+    margin: 0;
+    font-size: 1.1em;
+    color: #ff0066;
+    text-shadow: 0 0 10px rgba(255, 0, 102, 0.8);
+}
+
+#siteFooter p strong {
+    color: #ffffff;
+    text-shadow: 0 0 5px rgba(255, 255, 255, 0.7);
+}
+
+/* Легкое свечение вокруг секции подвала */
+#siteFooter {
+    box-shadow: 0 -5px 15px rgba(255, 0, 102, 0.3);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
