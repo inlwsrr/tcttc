@@ -3,7 +3,7 @@ const Stripe = require('stripe');
 const bodyParser = require('body-parser');
 const cors = require('cors');
 
-const stripe = Stripe('sk_test_51QWk6BA8Xe2YD1W5ibEt4jMDHJHwERP0IUyXHBBXoj902Pa7Gka6SWEy9X4qgTf0WJWnhnZUfS75aZEtDEJ9Cp7P00WgU74LYs'); // Вставьте ваш Secret Key
+const stripe = Stripe(''); // Вставьте ваш Secret Key
 
 const app = express();
 app.use(cors());
